@@ -3,13 +3,13 @@
 </HEADER>
 
 
-<div class="body">
-  <div class="main">
-    <ng-content select=".trans-content"></ng-content>
-  </div>
-  <div class="nav">
+<div class="body row">
+   <div class="nav col col-2">
     <ng-content select=".trans-nav"></ng-content>
   </div>
+  <div class="main col">
+    <ng-content select=".trans-content"></ng-content>
+  </div> 
 </div>
 
 <FOOTER>
