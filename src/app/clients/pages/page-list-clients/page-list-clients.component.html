@@ -14,10 +14,11 @@
   </div>
 </ng-template>
 
-<app-template-page [titre]="'Liste des clients'" (actionRetour)="goBackToOrders()">
+<app-template-page [titre]="'Liste des clients'" (actionRetour)="goBackToOrders()" [afficherbutton]= "false">
 <div class="container">
 <table class=" table table-striped table-hover">
   <thead>
+  
     <tr>
         <th>Id</th>
         <th>Nom</th>
@@ -32,10 +33,14 @@
   <tbody>
     <tr *ngFor="let client of clients">
       <td> {{client.id}} </td>
-    
       <td> {{client.name}} </td>
+      <td> {{client.firstname}} </td>
+      <td> {{client.socialReason}} </td>
+      <td> {{client.numDepartment}} </td>
+      <td> {{client.numTel}} </td>
+  
       <td>
-        <a [routerLink]="['../edit', client.id]">
+        <a [routerLink]="['../edit', client.id]" class="me-5">
             <app-icon-edit></app-icon-edit>
           </a>
         <a href="javascript:void(0)">
@@ -47,7 +52,9 @@
     </tr>
   </tbody>
 </table>
-<a [routerLink]="'../new'" class="btn btn-primary"><app-icon-add></app-icon-add></a>
+<a  [routerLink]="'../new'" class="btn btn-outline-primary"> Ajouter</a>
+
+
 </div>
 </app-template-page>
 
