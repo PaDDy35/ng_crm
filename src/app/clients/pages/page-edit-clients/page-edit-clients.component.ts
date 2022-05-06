@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Client } from 'src/app/core/Models/Client-M';
@@ -16,20 +16,35 @@ import { ClientsService } from '../../service/clients.service';
   public client: Client = {} as Client;
 
   public clientName : string = '';
+  public firstName: string = '';
   public souscriptionGetVersion: Subscription | null = null;
 
   public success = false;
   public failure = false;
   public formulaire!: FormGroup;
+   
 
   constructor(
       private activatedRoute: ActivatedRoute,
       private clientsService: ClientsService,
       private router: Router,
-      private versionService: VersionService)  { }
+      private versionService: VersionService,
+      private formBuilder:  FormBuilder)  { }
 
   getClientId() {
     return this.clientId;
+  }
+
+  initForm(client: Client): void {
+    this.formulaire = this.formBuilder.group({
+        id: [client.id, Validators.min(10)/*, Validators.pattern(/[0-9]/)*/],
+        name: [client.name, [Validators.minLength(5), Validators.required]],
+        firstName: [client.firstname, [Validators.minLength(3), Validators.required]],
+        socialreason: [client.socialReason, [ Validators.required]],
+        numdepartment: [client.numDepartment, [Validators.maxLength(3)]],
+        numtele: [client.numTel, [Validators.maxLength(10), Validators.minLength(10)]],
+        
+    });
   }
 
   ngOnInit(): void {
@@ -44,8 +59,12 @@ import { ClientsService } from '../../service/clients.service';
         this.clientId = Number(url[url.length -1])
     // On recherche le Client
         this.clientsService.getClientById(this.clientId).subscribe(
-          client => {this.client = client;
-                     this.clientName = this.client.name;} // permet d'afficher le Titre de la page Edit avec le nom du Client
+          client => {
+            this.client = client;
+            this.clientName = this.client.name;
+            this.firstName = this.client.firstname;
+           this.initForm(client);
+          } // permet d'afficher le Titre de la page Edit avec le nom du Client
         );
       }
     );
