@@ -1,4 +1,5 @@
 {
+
   "posts": [
     {
       "id": 1,
@@ -16,4 +17,76 @@
   "profile": {
     "name": "typicode"
   }
+}
+
+  "users": [
+    {
+      "login": "titi",
+      "name": "Jeanne Moreau",
+      "mdp": "titi1"
+    },
+    {
+      "login": "tata",
+      "name": "Christophe Lambert",
+      "mdp": "titi2"
+    },
+    {
+      "login": "toto",
+      "name": "Luis de Funes",
+      "mdp": "titi3"
+    }
+  ],
+  "orders": [
+    {
+      "id": 0,
+      "idClient": 2,
+      "ttc": 120,
+      "date": "2022-04-29",
+      "status": "TO_DO"
+    },
+    {
+      "id": 1,
+      "idClient": 2,
+      "ttc": 60,
+      "date": "2022-04-29",
+      "status": "DONE"
+    }
+  ],
+  "clients": [
+    {
+      "id": 3,
+      "name": "client lambda",
+      "socialReason": "AXA",
+      "numDepartment": "91",
+      "numTel": "0243538699"
+    },
+    {
+      "id": 1,
+      "name": "Uno",
+      "socialReason": "Freezer",
+      "numDepartment": "91",
+      "numTel": "0243531299"
+    },
+    {
+      "id": 2,
+      "name": "Deus Ex",
+      "socialReason": "Machina",
+      "numDepartment": "2A",
+      "numTel": "0413531287"
+    },
+    {
+      "id": 4,
+      "name": "Natte",
+      "socialReason": "Pirate!",
+      "numDepartment": "35",
+      "numTel": "0245431287"
+    },
+    {
+      "id": 6,
+      "name": "Arthur",
+      "socialReason": "Lustucru",
+      "numDepartment": "28",
+      "numTel": "0237436731"
+    }
+  ]
 }

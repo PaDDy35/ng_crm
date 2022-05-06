@@ -2,13 +2,15 @@
   <app-icon-nav></app-icon-nav>
 </p>
 <a [routerLink]="['clients']"
-  routerLinkActive="router-link-active" >Clients</a>
-<hr>
-<a [routerLink]="['/routePath']"
-  routerLinkActive="router-link-active">Orders</a>
-<hr>
-<a [routerLink]="['/routePath']"
-  routerLinkActive="router-link-active">Users</a>
+  routerLinkActive="router-link-active" class="btn btn-light">Clients</a>
 <hr>
 <a [routerLink]="['clients/new']"
-  routerLinkActive="router-link-active" >Nouveau Client</a>
+  routerLinkActive="router-link-active"class="btn btn-light">Nouveau Client</a>
+<hr>  
+<a [routerLink]="['/routePath']"
+  routerLinkActive="router-link-active" class="btn btn-light">Commandes</a>
+<hr>
+<a [routerLink]="['/routePath']"
+  routerLinkActive="router-link-active" class="btn btn-light">Utilisateurs</a>
+
+

@@ -1,0 +1,29 @@
+header { height: 100px;
+    background-color: var(--color-fond);
+    display: flex;
+    align-items: center;}
+  
+.body { background-color: var(--main-color-fond);
+    color : var (--color-text);
+    height: calc(100% - 200px);}
+  
+.nav {height: 100%;}
+  
+.main { background-color: var(--pg-color-fond);
+      height: 100%;}
+  
+footer { background-color: var(--footer-color-fond);
+      align-items: center;
+      height: 100px;
+      color : var (--color-text);}
+
+.nav-hidden { display: none;}
+  
+.tr-icon-close {text-align: center;}
+  
+.btn:active
+  {background-color: var(--pg-color-fond)!important;}
+  
+.btn:hover
+  { background-color: var(--main-color-fond)!important;}
+  

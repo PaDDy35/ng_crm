@@ -10,6 +10,7 @@ import { ClientsService } from '../../service/clients.service';
   styleUrls: ['./page-new-clients.component.scss']
 }) export class PageNewClientsComponent implements OnInit {
 
+
   // L'UTILISATION DU FORMBUILDER les enlève
    public id : number = 0;
    public name: string ='';
