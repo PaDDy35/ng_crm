@@ -1,4 +1,3 @@
-import { Observable } from "rxjs";
 import { ClientInteface }  from "../Interfaces/client-I";
 
 export class Client implements ClientInteface {
@@ -9,7 +8,7 @@ export class Client implements ClientInteface {
   numDepartment: string = '';
   numTel: number = 0;
 
-    constructor(partialClient: Observable<Client[]>) {
+    constructor(partialClient: Partial<Client>) {
       if (partialClient) {
         Object.assign(this, partialClient);
       }
