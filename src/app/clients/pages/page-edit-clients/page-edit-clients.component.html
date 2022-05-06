@@ -1,4 +1,4 @@
-<app-template-page [titre]="'Edition du client ' + clientName"
+<app-template-page [titre]="'Modification du client ' + clientName"
   (actionRetour)="goBackToList()">
 <div>
   Id : {{client.id}}
@@ -18,6 +18,30 @@
     <label>
       Nom :
       <input [(ngModel)]= "client.name" type="text">
+    </label>
+  </div>
+  <div class="form-control m-3">
+    <label>
+      Prénom :
+      <input [(ngModel)]= "client.firstname" type="text">
+    </label>
+  </div>
+  <div class="form-control m-3">
+    <label>
+      Raison sociale :
+      <input [(ngModel)]= "client.socialReason" type="text">
+    </label>
+  </div>
+  <div class="form-control m-3">
+    <label>
+      Numéro du département :
+      <input [(ngModel)]= "client.numDepartment" type="text">
+    </label>
+  </div>
+  <div class="form-control m-3">
+    <label>
+      Numéro de téléphone :
+      <input [(ngModel)]= "client.numTel" type="number">
     </label>
   </div>
 </fieldset>

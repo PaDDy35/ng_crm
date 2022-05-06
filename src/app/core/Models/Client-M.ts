@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
-import { ClientI }  from "../Interfaces/client-I";
+import { ClientInteface }  from "../Interfaces/client-I";
 
-export class Client implements ClientI {
+export class Client implements ClientInteface {
   id: number = 0;
   name: string = '';
   firstname: string = '';

@@ -1,5 +1,5 @@
 
-export interface ClientI {
+export interface ClientInteface {
   id: number;
   name: string;
   firstname: string;
