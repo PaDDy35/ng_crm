@@ -1,6 +1,6 @@
-<app-template-page [titre]="'Ajout d\'un client'">
+<app-template-page [titre]="'Ajout d\'un nouveau client'">
 
-<ngb-toast header="Ajout d'un client" class="bg-success" [delay]="5000" *ngIf="success" (hidden)="goBackToList()">
+<ngb-toast header="Ajout d'un nouveau client" class="bg-success text-light" [delay]="5000" *ngIf="success" (hidden)="goBackToList()">
   Ajout réussi !
 </ngb-toast>
 <ngb-toast header="Ajout d'un client" class="bg-danger" [delay]="5000" *ngIf="failure" (hidden)="failure= false">
@@ -37,7 +37,7 @@
 
 
   <button class="btn btn-primary m-3"
-    (click)="ajouter()" [disabled]="formulaire.invalid"> <!-- Grise le bouton -->
+    (click)="ajouter()"[disabled]="formulaire.invalid"> <!-- Grise le bouton -->
     Ajouter</button>
 
   <button class="btn btn-secondary">
