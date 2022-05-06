@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Client } from 'src/app/core/Models/Client-M';
@@ -13,8 +14,13 @@ import { ClientsService } from '../../service/clients.service';
 
   public clientId: number = 0;
   public client: Client = {} as Client;
+
   public clientName : string = '';
   public souscriptionGetVersion: Subscription | null = null;
+
+  public success = false;
+  public failure = false;
+  public formulaire!: FormGroup;
 
   constructor(
       private activatedRoute: ActivatedRoute,
