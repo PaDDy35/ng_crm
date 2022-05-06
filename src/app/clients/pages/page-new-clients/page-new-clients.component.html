@@ -1,0 +1,51 @@
+<app-template-page [titre]="'Ajout d\'un client'">
+
+<ngb-toast header="Ajout d'un client" class="bg-success" [delay]="5000" *ngIf="success" (hidden)="goBackToList()">
+  Ajout réussi !
+</ngb-toast>
+<ngb-toast header="Ajout d'un client" class="bg-danger" [delay]="5000" *ngIf="failure" (hidden)="failure= false">
+  Echec de l'ajout !
+</ngb-toast>
+
+<form [formGroup]="formulaire">
+  <fieldset class="fieldset m-5" [disabled]="success">
+    <div class="form-control m-3">
+      <label>
+        Id :
+        <!-- L'UTILISATION DU FORMBUILDER les enlève
+        <input [(ngModel)]= "id" type="number"> --> <!-- *
+        On remplace PAR :-->
+        <input formControlName="id" type="number">
+      </label>
+      <p></p>
+      <p class="text-danger" *ngIf="formulaire.controls['id'].invalid">
+                Identifiant requis et doit être supérieur à 2</p>
+    </div>
+    <div class="form-control m-3">
+      <label>
+        Nom :
+        <!-- L'UTILISATION DU FORMBUILDER les enlèves
+        <input [(ngModel)]= "name" type="text">
+        On remplace PAR :-->
+        <input formControlName="name" type="text">
+      </label>
+      <p></p>
+      <p class="text-danger" *ngIf="formulaire.controls['name'].invalid">
+                Nom requis</p>
+    </div>
+  </fieldset>
+
+
+  <button class="btn btn-primary m-3"
+    (click)="ajouter()" [disabled]="formulaire.invalid"> <!-- Grise le bouton -->
+    Ajouter</button>
+
+  <button class="btn btn-secondary">
+    <a [routerLink]="'/clients/list'">Retour</a>
+  </button>
+
+</form>
+<!-- * [] du .ts vers l'html : lien dynamique comme avec [ngClass]
+  () du .html vers le .ts
+  [()] bi directionnel : si je change dans l'un, la valeur change dans l'autre. -->
+</app-template-page>
