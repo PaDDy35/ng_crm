@@ -1,40 +1,48 @@
-<p>page-list-clients works!</p>
 
 <ng-template #content let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Confirmation de supression</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(false)"></button>
+   // <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss(false)"></button>
   </div>
   <div class="modal-body">
     <p>Confirmez-vous la suppression du client ?</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close(true)">Confirmer</button>
+    <button type="button" class="btn btn-outline-dark"
+     (click)="modal.close(true)">Confirmer</button>
     <button type="button" class="btn btn-outline-dark" (click)="modal.close(false)">Abandonner</button>
   </div>
 </ng-template>
 
 <app-template-page [titre]="'Liste des clients'" (actionRetour)="goBackToOrders()">
 <div class="container">
-<table>
+<table class=" table table-striped table-hover">
   <thead>
     <tr>
         <th>Id</th>
-        <th>TVA</th>
-        <th>Name</th>
-        <th>Editer/supprimer ?</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Raison Sociale</th>
+        <th>Num Departement</th>
+        <th>Num-Tel</th>
+        
+        <th>Editer/supprimer</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let client of clients">
       <td> {{client.id}} </td>
-      <td> {{client.id | tva:20}} </td>
+    
       <td> {{client.name}} </td>
       <td>
         <a [routerLink]="['../edit', client.id]">
-            <app-icon-edit></app-icon-edit></a>
+            <app-icon-edit></app-icon-edit>
+          </a>
         <a href="javascript:void(0)">
-            <app-icon-delete (click)="confirmDeletion( content, client.id)"></app-icon-delete></a>
+            <app-icon-delete (click)="confirmDeletion( content, client.id)">
+         
+            </app-icon-delete>
+          </a>
       </td>
     </tr>
   </tbody>
