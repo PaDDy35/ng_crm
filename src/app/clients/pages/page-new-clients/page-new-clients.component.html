@@ -1,4 +1,4 @@
-<app-template-page [titre]="'Ajout d\'un nouveau client'">
+<app-template-page [titre]="'Ajout d\'un nouveau client'" [afficherButton]="false">
 
 <ngb-toast header="Ajout d'un nouveau client" class="bg-success text-light" [delay]="5000" *ngIf="success" (hidden)="goBackToList()">
   Ajout réussi !
@@ -10,7 +10,7 @@
 <form [formGroup]="formulaire">
   <fieldset class="fieldset m-5" [disabled]="success">
     <div class="form-control m-3">
-      <label>
+      <label class="m-bottom 0">
         Id :
         <!-- L'UTILISATION DU FORMBUILDER les enlève
         <input [(ngModel)]= "id" type="number"> --> <!-- *
@@ -33,9 +33,57 @@
       <p class="text-danger" *ngIf="formulaire.controls['name'].invalid">
                 Nom requis</p>
     </div>
+    <div class="form-control m-3"> 
+    <label>
+      Prénom :
+      <!-- L'UTILISATION DU FORMBUILDER les enlèves
+      <input [(ngModel)]= "name" type="text">
+      On remplace PAR :-->
+      <input formControlName="name" type="text">
+    </label>
+    <p></p>
+    <p class="text-danger" *ngIf="formulaire.controls['name'].invalid">
+              Nom requis</p>
+</div>
+
+<div class="form-control m-3"> 
+  <label>
+    Raison Sociale :
+    <!-- L'UTILISATION DU FORMBUILDER les enlèves
+    <input [(ngModel)]= "name" type="text">
+    On remplace PAR :-->
+    <input formControlName="name" type="text">
+  </label>
+  <p></p>
+  <p class="text-danger" *ngIf="formulaire.controls['name'].invalid">
+            Raison sociale requis</p>
+</div>
+
+<div class="form-control m-3"> 
+  <label>
+   Num Departement :
+    <!-- L'UTILISATION DU FORMBUILDER les enlèves
+    <input [(ngModel)]= "name" type="text">
+    On remplace PAR :-->
+    <input formControlName="name" type="text">
+  </label>
+  <p></p>
+</div>
+
+<div class="form-control m-3"> 
+  <label>
+   Num de tél :
+    <!-- L'UTILISATION DU FORMBUILDER les enlèves
+    <input [(ngModel)]= "name" type="text">
+    On remplace PAR :-->
+    <input formControlName="name" type="text">
+  </label>
+  <p></p>
+</div>
+    
+
   </fieldset>
-
-
+  
   <button class="btn btn-primary m-3"
     (click)="ajouter()"[disabled]="formulaire.invalid"> <!-- Grise le bouton -->
     Ajouter</button>

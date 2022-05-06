@@ -9,6 +9,8 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@
 
   @Input() public titre :string = 'Mon titre par défaut';
   @Output() public actionRetour = new EventEmitter<void>();
+@Input() public afficherButton = true
+
 
   constructor() {
     console.info('On Constructor');

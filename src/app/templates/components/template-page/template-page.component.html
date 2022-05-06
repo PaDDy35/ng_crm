@@ -5,6 +5,6 @@
 <div>
   Mon contenu
   <ng-content></ng-content>
-  <button (click)="retour()" class="btn btn-secondary">Retour</button>
+  <button (click)="retour()" class="btn btn-secondary" *ngIf="afficherButton">Retour</button>
 </div>
 
