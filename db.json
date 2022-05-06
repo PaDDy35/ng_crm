@@ -35,23 +35,38 @@
   "clients": [
     {
       "id": 3,
-      "name": "client lambdE"
+      "name": "client lambda",
+      "socialReason": "AXA",
+      "numDepartment": "91",
+      "numTel": "0243538699"
     },
     {
       "id": 1,
-      "name": "Uno"
+      "name": "Uno",
+      "socialReason": "Freezer",
+      "numDepartment": "91",
+      "numTel": "0243531299"
     },
     {
       "id": 2,
-      "name": "Deus Ex"
+      "name": "Deus Ex",
+      "socialReason": "Machina",
+      "numDepartment": "2A",
+      "numTel": "0413531287"
     },
     {
       "id": 4,
-      "name": "Natte"
+      "name": "Natte",
+      "socialReason": "Pirate!",
+      "numDepartment": "35",
+      "numTel": "0245431287"
     },
     {
       "id": 6,
-      "name": "Hartur"
+      "name": "Arthur",
+      "socialReason": "Lustucru",
+      "numDepartment": "28",
+      "numTel": "0237436731"
     }
   ]
 }
