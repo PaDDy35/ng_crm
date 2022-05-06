@@ -1,4 +1,4 @@
-<app-template-page [titre]="'Ajout d\'un client'">
+<app-template-page [titre]="'Ajout d\'un client'" [afficherbutton]="false">
 
 <ngb-toast header="Ajout d'un client" class="bg-success" [delay]="5000" *ngIf="success" (hidden)="goBackToList()">
   Ajout réussi !
