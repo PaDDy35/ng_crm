@@ -2,3 +2,18 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+
+
+:root {/* declaration des var color utilisées dans les différents .scss */
+    --color-fond: rgb(227, 219, 247) !important;
+    --main-color-fond : rgb(201, 236, 245);
+    --footer-color-fond : rgb(224, 243, 190);
+    --color-text :rgb(76, 11, 242);
+    --pg-color-fond:rgb(238, 241, 152);
+    --app-active-link-color:rgb(162, 247, 162);
+  }
+  
+  html, body {
+    height: 100%;
+  }
+.btn { margin-left: 15px;}
