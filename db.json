@@ -1,5 +1,4 @@
 {
-
   "posts": [
     {
       "id": 1,
@@ -14,12 +13,12 @@
       "postId": 1
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
-}
-
-  "users": [
+  "profile": [
+    {
+      "name": "typicode"
+    }
+  ],
+  "Users": [
     {
       "login": "titi",
       "name": "Jeanne Moreau",
@@ -54,40 +53,68 @@
   ],
   "clients": [
     {
-      "id": 3,
-      "name": "client lambda",
-      "socialReason": "AXA",
-      "numDepartment": "91",
-      "numTel": "0243538699"
-    },
-    {
-      "id": 1,
-      "name": "Uno",
-      "socialReason": "Freezer",
-      "numDepartment": "91",
-      "numTel": "0243531299"
-    },
-    {
       "id": 2,
-      "name": "Deus Ex",
-      "socialReason": "Machina",
-      "numDepartment": "2A",
-      "numTel": "0413531287"
+      "name": "Amine",
+      "firstname": "Omar",
+      "numDepartment": "98000",
+      "numTel": "0951362897",
+      "socialReason": "roro"
     },
     {
-      "id": 4,
-      "name": "Natte",
-      "socialReason": "Pirate!",
-      "numDepartment": "35",
-      "numTel": "0245431287"
+      "id": 7,
+      "name": "Oussama",
+      "firstname": "Boubadjou",
+      "socialReason": "foufou",
+      "numDepartement": "151436",
+      "numTel": "0813284697"
     },
     {
-      "id": 6,
-      "name": "Arthur",
-      "socialReason": "Lustucru",
-      "numDepartment": "28",
-      "numTel": "0237436731"
+      "id": 5,
+      "name": "Boubadjou",
+      "firstname": "Oussama",
+      "socialReason": "CDI",
+      "numDepartment": "22000",
+      "numTel": "0825147896"
+    },
+    {
+      "id": 13,
+      "name": "aeaefaeaef",
+      "firstname": "aefaef",
+      "socialReason": "aveaef",
+      "numDepartment": "aefav",
+      "numTel": "eafeaffaea"
+    },
+    {
+      "id": 3,
+      "name": "aecfac",
+      "firstname": "cea",
+      "socialReason": "ada",
+      "numDepartment": "aefaae",
+      "numTel": "eaazadazdz"
+    },
+    {
+      "id": 26,
+      "name": "Oussama",
+      "firstname": "Boubadjou",
+      "socialReason": "foufou",
+      "numDepartment": "151436",
+      "numTel": "0813284697"
+    },
+    {
+      "id": 25,
+      "name": "Oussama",
+      "firstname": "Boubadjou",
+      "socialReason": "foufou",
+      "numDepartment": "151436",
+      "numTel": "0813284697"
+    },
+    {
+      "id": 78,
+      "name": "Oussama",
+      "firstname": "Boubadjou",
+      "socialReason": "foufou",
+      "numDepartment": "151436",
+      "numTel": "0813284697"
     }
   ]
-
 }

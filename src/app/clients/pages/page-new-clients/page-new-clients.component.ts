@@ -12,44 +12,49 @@ import { ClientsService } from '../../service/clients.service';
 
 
   // L'UTILISATION DU FORMBUILDER les enlève
-   public id : number = 0;
-   public name: string ='';
+  //public id: number = 0;
+  //public name: string = '';
 
-  public client: Client = {} as Client;
+  //public client: Client = {} as Client;
 
-  public success=false;
-  public failure=false;
+  public success = false;
+  public failure = false;
 
   public formulaire!: FormGroup;
 
   constructor(
-        private formBuilder: FormBuilder,
-        private ClientsService: ClientsService,
-        private router: Router,
-        private activatedRoute: ActivatedRoute) { }
+    private formBuilder: FormBuilder,
+    private ClientsService: ClientsService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
 
 
   ngOnInit(): void {
-    this.formulaire = this.formBuilder.group({
-      id : [0, [Validators.min(2),Validators.pattern(/^[0-9]*$/)]],
-      name: ['', [Validators.required]]
-    });
+    this.formulaire =
+      this.formBuilder.group({
+        id: [0, [Validators.required, Validators.maxLength(3)]],
+        name: ['', [Validators.required, Validators.maxLength(25)]],
+        firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+        socialReason: [''],
+        numDepartment: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(6)]],
+        numTel: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      });
   }
 
   ajouter() {
     console.info(this.formulaire.value);
     this.ClientsService.addClient(
-        this.formulaire.value as Client
+      this.formulaire.value as Client
     ).subscribe({
-      next: () => {this.success = true;},
-      error: () => {this.failure = true;}
-      }
+      next: () => { this.success = true; },
+      error: () => { this.failure = true; }
+    }
     );
   }
 
-  goBackToList () {
+  goBackToList() {
     // navigateByUrl n'utilise que des chemins absolus
     // this.router.navigateByUrl('/clients/list');
-    this.router.navigate( ['/clients/list'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['/clients/list'], { relativeTo: this.activatedRoute });
   }
 }
